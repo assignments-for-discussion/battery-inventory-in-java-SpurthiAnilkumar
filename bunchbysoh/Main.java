@@ -1,6 +1,5 @@
-package bunchbysoh;
-
-public class Main {
+public class Main{
+    
   static class CountsBySoH {
     public int healthy = 0;
     public int exchange = 0;
@@ -11,15 +10,15 @@ public class Main {
     CountsBySoH counts = new CountsBySoH();
     
     for (int capacity : presentCapacities) {
-      if (capacity > 80) {
+      double soh = 100.0 * capacity / 120.0; 
+      if (soh > 80.0 && soh <= 100.0) {
         counts.healthy++;
-      } else if (capacity >= 63) {
+      } else if (soh >= 63.0 && soh <= 80.0) {
         counts.exchange++;
-      } else {
+      } else if (soh < 63.0) {
         counts.failed++;
       }
     }
-    
     return counts;
   }
 
@@ -27,13 +26,13 @@ public class Main {
     System.out.println("Counting batteries by SoH...\n");
     int[] presentCapacities = {115, 118, 80, 95, 91, 72};
     CountsBySoH counts = countBatteriesByHealth(presentCapacities);
-    assert(counts.healthy == 3);  // Changed from 2
-    assert(counts.exchange == 2); // Changed from 3
+    assert(counts.healthy == 2);
+    assert(counts.exchange == 3);
     assert(counts.failed == 1);
     System.out.println("Done counting :)\n");
   }
 
   public static void main(String[] args) {
     testBucketingByHealth();
+    
   }
-}
