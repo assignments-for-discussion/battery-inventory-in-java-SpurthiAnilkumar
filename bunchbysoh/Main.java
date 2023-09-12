@@ -2,7 +2,6 @@ package bunchbysoh;
 
 public class Main {
   public static void main(String[] args){
-    double[] capacities={115,118,80,95,91,72};
     int healthycount = 0;
     int exchangecount = 0;
     int failedcount = 0;
@@ -19,24 +18,21 @@ public class Main {
       else{
         failedcount++;
       }
- /* static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {
+ static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {
     CountsBySoH counts = new CountsBySoH();
     return counts;
-  }*/
+// int[] presentCapacities = {115, 118, 80, 95, 91, 72};
+    double[] capacities={115,118,80,95,91,72};
+    CountsBySoH counts = countBatteriesByHealth(presentCapacities);
+   /* assert(counts.healthy == 2);
+    assert(counts.exchange == 3);
+    assert(counts.failed == 1);*/
+   
     System.out.println("Counting batteries by SoH...\n");
     System.out.println("Number of Healthy Batteries:"+healthycount);
     System.out.println("Number of Exchange Batteries:"+exchangecount);
     System.out.println("Number of Failed Batteries:"+failedcount);
-    }
-  }
-   /* int[] presentCapacities = {115, 118, 80, 95, 91, 72};
-    CountsBySoH counts = countBatteriesByHealth(presentCapacities);
-    assert(counts.healthy == 2);
-    assert(counts.exchange == 3);
-    assert(counts.failed == 1);
     System.out.println("Done counting :)\n");
-  }*/
-
   //public static void main(String[] args) {
-    //testBucketingByHealth();
-  
+  //testBucketingByHealth();
+
