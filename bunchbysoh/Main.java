@@ -3,9 +3,9 @@ package bunchbysoh;
 public class Main {
   public static void main(String[] args){
     double[] capacities={115,118,80,95,91,72};
-    int healthy = 0;
-    int exchange = 0;
-    int failed = 0;
+    int healthycount = 0;
+    int exchangecount = 0;
+    int failedcount = 0;
 
     for(double capacity: capacities){
       double initialcapacity=100.0;
